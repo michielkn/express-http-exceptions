@@ -1,11 +1,17 @@
 {
   "name": "@michielkn/express-http-exceptions",
   "version": "1.0.0",
+  "repository": "https://github.com/michielkn/express-http-exceptions",
+  "homepage": "https://github.com/michielkn/express-http-exceptions",
+  "bugs": {
+    "url": "https://github.com/michielkn/express-http-exceptions/issues"
+  },
   "description": "A library to handle exceptions as http status codes",
   "main": "dist/index.js",
   "author": "michielkn",
   "license": "MIT",
   "private": false,
+  "keywords": ["express", "http", "exception", "exception handling"],
   "scripts": {
     "build": "tsc",
     "lint": "eslint src/"
