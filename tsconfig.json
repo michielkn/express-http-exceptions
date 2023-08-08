@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "dist/",
+    "sourceMap": true,
+    "rootDir": "src",
+    "declaration": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts"]
+}
