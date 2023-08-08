@@ -40,3 +40,21 @@ Throw an Exception in your express application
 
     throw New HttpException(404, {body: {field: "Some custom body"}}); // Will return a 404 with a custom body
 ```
+
+## HttpStatusCodes enums
+Instead of entering the http status-code as a number, there are also a couple of enums available that can be used.
+They are split up into the 5 types of status-codes and one "enum" that combines all enums together
+```javascript
+import {
+    InformationHttpStatusCodes,
+    RedirectionHttpStatusCodes,
+    SuccessHttpStatusCodes,
+    ClientErrorHttpStatusCodes,
+    ServerErrorHttpStatusCodes,
+    HttpStatusCodes,
+} from '@michielkn/express-http-exceptions';
+
+throw New HttpException(HttpStatusCodes.NOT_FOUND); // ==> 404
+// or
+throw New HttpException(ClientErrorHttpStatusCodes.NOT_FOUND); // ==> 404
+```
