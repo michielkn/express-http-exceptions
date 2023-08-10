@@ -34,11 +34,23 @@ Throw an Exception in your express application
     
     // or
 
-    throw New HttpException(404, {message: 'custom message'}); // Will return a 404 with a custom message
+    throw New HttpException(404, httpExceptionData); // Will return a 404 with some added data (see underneath)
+```
 
-    // or
+### HttpExceptionData
+The data object is used to add some custom data to the response. The data object itself is optional as are all the fields in data
+```typescript
+type HttpExceptionData = {
+    message?: string                                    // This string that becomes the response message
+    body?: unknown                                      // This will become the body
+    headers?: HttpExceptionDataHeader[]                 // A list of headers that should be set (See HttpExceptionDataHeader)
+}
 
-    throw New HttpException(404, {body: {field: "Some custom body"}}); // Will return a 404 with a custom body
+// The header object used in the HttpExceptionData
+type HttpExceptionDataHeader = {
+    name: string,                                       // The name of the header
+    value: number | string | ReadonlyArray<string>      // The value of the header
+}
 ```
 
 ## HttpStatusCodes enums

@@ -1,7 +1,13 @@
 
+type HttpExceptionDataHeader = {
+    name: string,
+    value: number | string | ReadonlyArray<string>
+}
+
 type HttpExceptionData = {
-    message?: string
-    body?: unknown
+    message?: string                        // This string that becomes the response message
+    body?: unknown                          // This will become the body
+    headers?: HttpExceptionDataHeader[]    // A list of headers that should be set
 }
 
 export default class HttpException {

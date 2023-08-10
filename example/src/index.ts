@@ -24,9 +24,14 @@ app.get('/202', () => {
     throw new HttpException(SuccessHttpStatusCodes.ACCEPTED);
 });
 
+app.get('/202-with-header', () => {
+    throw new HttpException(SuccessHttpStatusCodes.ACCEPTED, { headers: [{ name: 'test', value: 24, },], });
+});
+
 app.get('/500-with-body', () => {
     throw new HttpException(500, { body: { data: 'Some random data', }, });
 });
+
 
 app.use(HttpExceptionMiddleware);
 
